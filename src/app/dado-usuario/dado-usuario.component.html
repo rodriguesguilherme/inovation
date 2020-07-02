@@ -1,0 +1,106 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ dadosUsuario.name }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="../../assets/img/img_avatar.png">
+    <mat-card-content>
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                <span class="title">ID: </span>
+                <span> {{ dadosUsuario.id }} </span>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+                <span class="title">Nome de Usuário: </span>
+                <span> {{ dadosUsuario.username }} </span>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+                <span class="title">E-mail: </span>
+                <span> {{ dadosUsuario.email }} </span>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+                <span class="section">Endereço</span>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+                <span class="title">Logradouro: </span>
+                <span> {{ dadosUsuario.address.street }} </span>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+                <span class="title">Apartamento: </span>
+                <span> {{ dadosUsuario.address.suite }} </span>
+            </mat-list-item>
+            
+            <mat-list-item role="listitem">
+                <span class="title">Cidade: </span>
+                <span> {{ dadosUsuario.address.city }} </span>
+            </mat-list-item>
+            
+            <mat-list-item role="listitem">
+                <span class="title">CEP: </span>
+                <span> {{ dadosUsuario.address.zipcode }} </span>
+
+                <mat-divider></mat-divider>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+                <span class="section">Geolocalização</span>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+                <span class="title">Latitude: </span>
+                <span> {{ dadosUsuario.address.geo.lat }} </span>
+            </mat-list-item>
+            
+            <mat-list-item role="listitem">
+                <span class="title">Longitude: </span>
+                <span> {{ dadosUsuario.address.geo.lng }} </span>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+     
+            <mat-list-item role="listitem">
+                <span class="title">Telefone: </span>
+                <span> {{ dadosUsuario.phone }} </span>
+
+                <mat-divider></mat-divider>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+                <span class="title">Site: </span>
+                <span> {{ dadosUsuario.website }} </span>
+
+                <mat-divider></mat-divider>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+                <span class="section">Dados da empresa</span>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+                <span class="title">Nome: </span>
+                <span> {{ dadosUsuario.company.name }} </span>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+                <span class="title">Frese de efeito: </span>
+                <span> {{ dadosUsuario.company.catchPhrase }} </span>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+                <span class="title">Ramo: </span>
+                <span> {{ dadosUsuario.company.bs }} </span>
+
+                <mat-divider></mat-divider>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" routerLink="/home">Voltar</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <router-outlet></router-outlet>

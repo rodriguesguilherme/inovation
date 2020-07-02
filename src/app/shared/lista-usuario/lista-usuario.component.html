@@ -1,0 +1,70 @@
+<mat-form-field class="example-form-field">
+    <mat-label>Pesquisar usuários</mat-label>
+    <input matInput type="text" [(ngModel)]="pesquisaUsuario">
+</mat-form-field>
+
+<button mat-raised-button class="btn-pesquisar" color="primary" (click)="filtroUsuario()">Pesquisar</button>
+
+<div *ngIf="!pesquisa">
+    <mat-expansion-panel hideToggle *ngFor="let usuario of listaUsuario$ | async">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+             {{ usuario.id }} {{ usuario.name }}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="margin-bottom">
+            <span class="title">Usuario:</span>
+            <span>{{ usuario.username }}</span>
+        </div>
+    
+        <div class="margin-bottom">
+            <span class="title">E-mail:</span>
+            <span>{{ usuario.email }}</span>
+        </div>
+    
+        <div class="margin-bottom">
+            <span class="title">Telefone:</span>
+            <span>{{ usuario.phone }}</span>
+        </div>
+    
+        <div>
+            <span class="title">Cidade:</span>
+            <span>{{ usuario.address.city }}</span>
+        </div>
+    
+        <a class="todos-dados" [routerLink]="['/dados-usuario', usuario.id]">Ver todos os dados</a>
+    </mat-expansion-panel>
+</div>
+
+<div *ngIf="pesquisa">
+    <mat-expansion-panel hideToggle *ngFor="let usuario of usuarioFiltrado">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+             {{ usuario.id }} {{ usuario.name }}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="margin-bottom">
+            <span class="title">Usuario:</span>
+            <span>{{ usuario.username }}</span>
+        </div>
+    
+        <div class="margin-bottom">
+            <span class="title">E-mail:</span>
+            <span>{{ usuario.email }}</span>
+        </div>
+    
+        <div class="margin-bottom">
+            <span class="title">Telefone:</span>
+            <span>{{ usuario.phone }}</span>
+        </div>
+    
+        <div>
+            <span class="title">Cidade:</span>
+            <span>{{ usuario.address.city }}</span>
+        </div>
+    
+        <a class="todos-dados" [routerLink]="['/dados-usuario', usuario.id]">Ver todos os dados</a>
+    </mat-expansion-panel>
+</div>
+
+<router-outlet></router-outlet>
